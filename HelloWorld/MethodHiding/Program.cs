@@ -6,32 +6,29 @@ using System.Threading.Tasks;
 
 namespace MethodHiding
 {
-    class Base
+    class Item
     {
-        public void MyMethod()
+        public void Using()
         {
-            Console.WriteLine("Base.MyMethod()");
+            Console.WriteLine("Item.Uinsg()");
         }
+
     }
-    class Derived : Base
+
+    class Posion : Item
     {
-        public void MyMethod()
-        { 
-            Console.WriteLine("Derived.MyMethod()");
+        public void Using()
+        {
+            Console.WriteLine("Posion.Using()");
         }
     }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Base baseObj = new Base();
-            baseObj.MyMethod();
-
-            Derived derivedObj = new Derived();
-            derivedObj.MyMethod();
-
-            Base baseOrDerived = new Derived();
-            baseOrDerived.MyMethod();
+            Item item = new Posion();
+            item.Using();
         }
     }
 }
