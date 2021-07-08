@@ -7,20 +7,36 @@ using static System.Console;
 
 namespace MainApp
 {
+    class Cat
+    {
+        public Cat(string _Name, string _Color)
+        {
+            Name = _Name;
+            Color = _Color;
+        }
+        ~Cat()
+        {
+            WriteLine($"{Name} : 잘가");
+        }
+        public void Meow()
+        {
+            WriteLine($"{Name} : 야옹");
+        }
+        public string Name;
+        public string Color;
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            double mean = 0;
+            Cat Kitty = new Cat("키티", "회색");
+            Kitty.Meow();
+            WriteLine($"{Kitty.Name} : {Kitty.Color}");
 
-            Mean(1, 2, 3, 4, 5, mean);
-
-            WriteLine($"{mean}");
-
-        }
-        public static void Mean(double a, double b, double c, double d, double e, double mean)
-        {
-            mean = (a + b + c + d + e) / 5;
+            Cat Nero = new Cat("네로", "검은색");
+            Nero.Meow();
+            WriteLine($"{Nero.Name} : {Nero.Color}");
         }
     }
+    
 }
